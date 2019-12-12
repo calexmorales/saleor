@@ -2405,7 +2405,7 @@ def test_user_with_permission_can_update_private_meta(
     errors = content["data"]["orderUpdatePrivateMeta"]["errors"]
     assert len(errors) == 0
     order.refresh_from_db()
-    assert order.get_private_meta(namespace="test", client="client1") == {"foo": "bar"}
+    assert order.get_private_meta(namespace="test1", client="client") == {"foo": "bar"}
 
 
 @pytest.fixture
